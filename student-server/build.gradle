@@ -26,9 +26,10 @@ repositories{
 dependencies{
 
     compile project(':student-data')
-    compile name: 'oauth-resource-0.4.1'
-    compile name: 'oauth-data-0.4.1'
-    compile name: 'ncu-card-service-1.0.0'
+    compile name: 'oauth-resource-0.6.0'
+    compile name: 'oauth-data-0.6.0'
+    compile name: 'ncu-card-service-1.1.1'
+    compile name: 'card-client-spring-boot-1.1.1.0'
 
     compile 'org.springframework.security:spring-security-config:4.0.0.RELEASE' ,
             'org.springframework.security:spring-security-test:4.0.0.RELEASE',
