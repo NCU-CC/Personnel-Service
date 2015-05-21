@@ -1,0 +1,59 @@
+
+apply plugin: 'war'
+apply plugin: 'spring-boot'
+apply plugin: 'org.akhikhl.gretty'
+
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath 'org.akhikhl.gretty:gretty:1.1.8'
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.2.2.RELEASE'
+    }
+}
+
+repositories{
+    flatDir {
+        dirs '../lib'
+    }
+    maven {
+        url "http://repo.springsource.org/libs-milestone/"
+    }
+}
+
+dependencies{
+
+    compile project(':student-data')
+    compile name: 'oauth-resource-0.6.0'
+    compile name: 'oauth-data-0.6.0'
+    compile name: 'ncu-card-service-1.1.1'
+    compile name: 'card-client-spring-boot-1.1.1.0'
+
+    compile 'org.springframework.security:spring-security-config:4.0.0.RELEASE' ,
+            'org.springframework.security:spring-security-test:4.0.0.RELEASE',
+            'org.springframework:spring-context-support:4.1.5.RELEASE',
+            'org.springframework.boot:spring-boot-starter-test:1.2.2.RELEASE',
+            'org.springframework.boot:spring-boot-starter-security:1.2.2.RELEASE',
+            'org.springframework.boot:spring-boot-starter-web:1.2.2.RELEASE',
+            'net.sf.ehcache:ehcache:2.9.0'
+
+    providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
+
+    testCompile 'org.spockframework:spock-spring:1.0-groovy-2.3',
+                'org.mock-server:mockserver-netty:3.6.2'
+
+}
+
+war {
+    archiveName = 'student-server.war'
+}
+
+gretty {
+    springBoot = true
+    springBootVersion = '1.2.2.RELEASE'
+    springBootMainClass = 'tw.edu.ncu.cc.course.student.Application'
+    httpsEnabled = true
+    httpsPort = 5278
+}
