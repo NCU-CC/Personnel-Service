@@ -23,7 +23,7 @@ public class SecurityConfig {
 
         @Override
         protected void configure( HttpSecurity http ) throws Exception {
-            http.antMatcher( "/v*/cards*" )
+            http.antMatcher( "/v*/cards**" )
                     .addFilterAfter( apiTokenDecisionFilter, UsernamePasswordAuthenticationFilter.class )
                     .csrf().disable()
         }
