@@ -12,7 +12,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import tw.edu.ncu.cc.oauth.resource.filter.ApiTokenDecisionFilter
 
 @EnableWebSecurity
-@EnableGlobalMethodSecurity( prePostEnabled = true )
 public class SecurityConfig {
 
     @Order( 1 )
@@ -24,7 +23,7 @@ public class SecurityConfig {
 
         @Override
         protected void configure( HttpSecurity http ) throws Exception {
-            http.antMatcher( "/v*/cards" )
+            http.antMatcher( "/v*/cards*" )
                     .addFilterAfter( apiTokenDecisionFilter, UsernamePasswordAuthenticationFilter.class )
                     .csrf().disable()
         }
