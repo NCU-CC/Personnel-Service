@@ -27,8 +27,8 @@ dependencies{
 
     compile project(':student-data')
     compile name: 'config-ssl-0.2.0'
-    compile name: 'oauth-resource-0.6.1'
-    compile name: 'oauth-data-0.6.1'
+    compile name: 'oauth-resource-0.6.2'
+    compile name: 'oauth-data-0.6.2'
     compile name: 'ncu-card-service-1.1.1'
     compile name: 'card-client-spring-boot-1.1.1.0'
 
