@@ -50,7 +50,7 @@ dependencies{
 }
 
 war {
-    archiveName = 'student-server.war'
+    archiveName = 'personnel-server.war'
 }
 
 gretty {
