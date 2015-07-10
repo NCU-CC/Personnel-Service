@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.core.convert.ConversionService
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
+import org.springframework.security.access.prepost.PreAuthorize
 import org.springframework.security.core.Authentication
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
@@ -22,7 +23,7 @@ import tw.edu.ncu.cc.student.server.service.AccessProtectService
 
 @RestController
 @RequestMapping( value = "v1/cards" )
-public class StudentNumberController {
+public class CardController {
 
     @Autowired
     def INCUCardService cardService
@@ -33,6 +34,7 @@ public class StudentNumberController {
     @Autowired
     def AccessProtectService accessProtectService
 
+    @PreAuthorize( "hasAuthority('user.info.basic.read')" )
     @RequestMapping( value = "{cardNumber}", method = RequestMethod.GET )
     public Object findPersonByCardNumberAndIdNumber( @PathVariable( "cardNumber" ) String cardNumber,
                                                      @RequestParam( "id" ) String idLast4Digits,

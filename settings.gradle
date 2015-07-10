@@ -1,2 +1,2 @@
-include 'student-data'
-include 'student-server'
+include 'personnel-data'
+include 'personnel-server'
