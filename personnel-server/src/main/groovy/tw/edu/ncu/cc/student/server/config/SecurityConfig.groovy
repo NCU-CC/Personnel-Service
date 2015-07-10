@@ -24,7 +24,7 @@ public class SecurityConfig {
         protected void configure( HttpSecurity http ) throws Exception {
             http.requestMatchers()
                     .antMatchers( "/v*/cards/**" )
-                    .antMatchers( "/v*/info" )
+                    .antMatchers( "/v*/info/**" )
                     .and()
                     .addFilterAfter( accessTokenDecisionFilter, UsernamePasswordAuthenticationFilter )
                     .csrf().disable()
