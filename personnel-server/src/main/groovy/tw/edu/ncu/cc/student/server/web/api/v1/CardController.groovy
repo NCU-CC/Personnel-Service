@@ -40,10 +40,6 @@ public class CardController {
                                                      @RequestParam( "id" ) String idLast4Digits,
                                                      Authentication authentication ) {
 
-        if( ! accessProtectService.isValidKey( authentication.name ) ) {
-            throw new InvalidRequestException( HttpStatus.FORBIDDEN, "forbidden" )
-        }
-
         Optional< INCUPerson > data = cardService.findPersonByCardNo( cardNumber, idLast4Digits )
         if( data.present ) {
             INCUPerson person = data.get()
