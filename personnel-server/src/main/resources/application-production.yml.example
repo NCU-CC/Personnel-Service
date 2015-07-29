@@ -6,6 +6,7 @@ logging:
 
 ncu:
   oauth:
+    api-token: your-api-token
     server-path: https://localhost/oauth
 
 ecard:
