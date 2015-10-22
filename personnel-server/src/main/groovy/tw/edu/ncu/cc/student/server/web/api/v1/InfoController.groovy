@@ -39,7 +39,9 @@ class InfoController {
         } else {
             Optional< Person > person = facultyService.findByPortalId( authentication.name )
             if( person.present ) {
-                conversionService.convert( person.get(), FacultyObject.class )
+                FacultyObject facultyObject = conversionService.convert( person.get(), FacultyObject.class )
+                facultyObject.number = authentication.name
+                facultyObject
             } else {
                 throw new HttpServerErrorException( HttpStatus.NOT_FOUND )
             }
