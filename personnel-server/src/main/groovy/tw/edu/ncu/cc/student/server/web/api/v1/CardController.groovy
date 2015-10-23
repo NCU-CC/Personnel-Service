@@ -46,9 +46,7 @@ public class CardController {
             if( person.type == PersonType.STUDENT ) {
                 return conversionService.convert( ( Student ) person, StudentObject )
             } else {
-                FacultyObject facultyObject = conversionService.convert( ( Faculty ) person, FacultyObject )
-                facultyObject.number = authentication.name
-                facultyObject
+                return conversionService.convert( ( Faculty ) person, FacultyObject )
             }
         } else {
             accessProtectService.registerError( authentication.name )
