@@ -41,6 +41,7 @@ class InfoController {
             if( person.present ) {
                 FacultyObject facultyObject = conversionService.convert( person.get(), FacultyObject.class )
                 facultyObject.number = authentication.name
+                facultyObject.id     = authentication.name
                 facultyObject
             } else {
                 throw new HttpServerErrorException( HttpStatus.NOT_FOUND )

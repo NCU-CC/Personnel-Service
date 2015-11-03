@@ -48,6 +48,7 @@ public class CardController {
             } else {
                 FacultyObject facultyObject = conversionService.convert( ( Faculty ) person, FacultyObject )
                 facultyObject.number = authentication.name
+                facultyObject.id     = authentication.name
                 facultyObject
             }
         } else {
