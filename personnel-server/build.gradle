@@ -30,7 +30,7 @@ dependencies{
     compile name: 'oauth-resource-1.0.1.0'
     compile name: 'oauth-data-1.0.1'
     compile name: 'location-data-0.4.0'
-    compile name: 'ncu-card-service-1.1.3'
+    compile name: 'ncu-card-service-1.1.4'
     compile name: 'card-client-spring-boot-1.1.1.0'
 
     compile 'org.springframework.security:spring-security-config:4.0.0.RELEASE' ,

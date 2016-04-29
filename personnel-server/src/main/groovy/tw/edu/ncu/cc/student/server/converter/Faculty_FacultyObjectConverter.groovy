@@ -14,7 +14,9 @@ class Faculty_FacultyObjectConverter implements Converter< Faculty, FacultyObjec
                 name: source.name,
                 type: source.type,
                 unit: source.unit,
-                title: source.title
+                title: source.title,
+                number: source.id,
+                id: source.id
         )
     }
 

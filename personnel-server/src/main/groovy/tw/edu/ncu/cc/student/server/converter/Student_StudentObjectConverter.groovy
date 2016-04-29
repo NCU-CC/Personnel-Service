@@ -16,7 +16,7 @@ class Student_StudentObjectConverter implements Converter< Student, StudentObjec
                 unit: source.unit,
                 group: source.group,
                 number: source.no,
-                id: source.no
+                id: source.id
         )
     }
 
