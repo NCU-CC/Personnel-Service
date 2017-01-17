@@ -15,7 +15,7 @@ class Person_FacultyObjectConverter implements Converter< Person, FacultyObject 
         new FacultyObject(
                 name: source.chineseName,
                 type: PersonType.FACULTY,
-                unit: source.primaryUnit.chineseName + " " + source.secondaryUnit.chineseName,
+                unit: source.primaryUnit.chineseName + ( source.secondaryUnit ? " " + source.secondaryUnit.chineseName : "" ),
                 title: source.title
         )
     }
