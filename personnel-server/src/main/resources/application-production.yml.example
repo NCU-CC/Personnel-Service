@@ -20,3 +20,6 @@ custom:
   connection:
     location:
       server: http://localhost:8898
+
+log-api:
+    uri: https://log.apitest.cc.ncu.edu.tw/log/api
